@@ -1,0 +1,21 @@
+{
+  "name": "cv_sabri_ammari",
+  "version": "1.0.0",
+  "description": "Curriculum Vitae de Sabri AMMARI",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CV",
+    "Resume",
+    "Sabri",
+    "AMMARI",
+    "portfolio"
+  ],
+  "author": "Sabri AMMARI",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.4"
+  }
+}
