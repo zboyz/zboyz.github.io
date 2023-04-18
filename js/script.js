@@ -129,7 +129,6 @@ gsap.from(".footCard", {
   scrollTrigger: {
     trigger: ".footCard",
     scrub: 1,
-    pin: true,
     start: "bottom bottom", 
     end: "top center",
   },
@@ -142,7 +141,6 @@ gsap.from(".cinemaCard", {
   scrollTrigger: {
     trigger: ".cinemaCard",
     scrub: 1,
-    pin: true,
     start: "bottom bottom", 
     end: "top center",
   },
