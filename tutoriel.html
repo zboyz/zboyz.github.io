@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Sabri AMMARI">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Mode d'emploi Création d'un site de E-commerce avec symfony 6</title>
+    <link rel="icon" type="image/x-icon" href="img/logoIcon.ico">
+</head>
+
+<body class="bg-body-light">
+    <header>
+        <nav class="container-fluid navbar navbar-expand-lg bg-dark bg-opacity-25 py-1">
+            <button class="navbar-toggler ms-4" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="logoSA" href="index.html">
+                <img id="logoSA" class="d-flex justify-content-start rounded-circle ms-3" src="img/SALogo.png"
+                    alt="Logo de Sabri AMMARI" style="width: 100px;">
+            </a>
+            <div class="collapse navbar-collapse" data-bs-theme="dark" id="navbarSupportedContent">
+                <ul class="nav justify-content-center mx-auto">
+                    <li class="nav-item">
+                        <a id="accueil" class="accueil nav-link fs-5 fw-bold" href="index.html"><i
+                                class="fa fa-fw fa-home"></i> ACCUEIL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="tutoriel" class="tutoriel nav-link fs-5 fw-bold" href="tutoriel.html"><i
+                                class="fa fa-fw fa-book"></i> TUTORIEL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="contact" class="contact nav-link fs-5 fw-bold" href="contact.html"><i
+                                class="fa fa-fw fa-envelope"></i> CONTACT</a>
+                    </li>
+                </ul>
+                <form class="justify-content-end me-3">
+                    <input id="searchInput" type="text" name="searchInput"
+                        class="align-self-center form-control border-dark" placeholder="Rechercher">
+                </form>
+            </div>
+        </nav>
+    </header>
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-sm-8 col-md-4">
+                <nav class="navbar navbar-dark bg-transparent position-fixed w-25 mb-3">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler bg-dark bg-opacity-50" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon text-white"></span>
+                        </button>
+                    </div>
+                </nav>
+                <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="light">
+                    <div id="sideBar" class="col-sm-4 col-md-4 mt-5 p-3 bg-light position-fixed border rounded-2 ms-2">
+                        <div class="fs-5 fw-bolder text-center text-uppercase">Table des matières</div>
+                        <hr class="pb-4">
+                        <ul class="list-unstyled ps-0">
+                            <li class="mb-1">
+                                <i class="chevron bi bi-chevron-right collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#home-collapse" aria-expanded="false">
+                                    <span class="fst-normal fw-semibold"> Installation & Configuration </span>
+                                </i>
+                                <div class="collapse" id="home-collapse">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ms-4">
+                                        <li><a href="#preRequis" class="text-decoration-none link-dark">- Pré-Requis</a></li>
+                                        <li><a href="#installationSymfony" class="text-decoration-none link-dark">- Installation de
+                                                Symfony 6</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="mb-1">
+                                <i class="chevron bi bi-chevron-right collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#dashboard-collapse" aria-expanded="false">
+                                    <span class="fst-normal fw-semibold"> Création d'un projet Web </span>
+                                </i>
+                                <div class="collapse" id="dashboard-collapse">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ms-4">
+                                        <li><a href="#projetWeb" class="text-decoration-none link-dark">- Projet d'un site web</a></li>
+                                        <li><a href="#verifProject" class="text-decoration-none link-dark">- Vérification du projet</a></li>
+                                        <li><a href="#architectureProjet" class="text-decoration-none link-dark">- Architecture du projet</a></li>
+                                        <li><a href="#dossierEnv" class="text-decoration-none link-dark">- Configuration de l'environnement</a></li>
+                                        <li><a href="#demarrageServeur" class="text-decoration-none link-dark">- Démarrage du serveur</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="mb-1">
+                                <i class="chevron bi bi-chevron-right collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#orders-collapse" aria-expanded="false">
+                                    <span class="fst-normal fw-semibold"> Création de la base de données </span>
+                                </i>
+                                <div class="collapse" id="orders-collapse">
+                                    <ul class="list-unstyled fw-normal pb-1 ms-4">
+                                        <!--<li><a href="#" class="text-decoration-none link-dark">Sous-titre</a></li>
+                                        <li><a href="#" class="text-decoration-none link-dark">Sous-titre</a></li>
+                                        <li><a href="#" class="text-decoration-none link-dark">Sous-titre</a></li>
+                                        <li><a href="#" class="text-decoration-none link-dark">Sous-titre</a></li>-->
+                                    </ul>
+                                </div>
+                            </li>
+                            <!--
+                            <li class="border-top my-3"></li>
+                            <li class="mb-1">
+                                <i class="chevron bi bi-chevron-right collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#account-collapse" aria-expanded="false">
+                                    <span class="fst-normal fw-semibold"> Conclusion </span>
+                                </i>
+                                <div class="collapse" id="account-collapse">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 ms-4">
+                                        <li><a href="#" class="text-decoration-none link-dark">Sous-titre</a></li>
+                                        <li><a href="#" class="text-decoration-none link-dark">Sous-titre</a></li>
+                                        <li><a href="#" class="text-decoration-none link-dark">Sous-titre</a></li>
+                                        <li><a href="#" class="text-decoration-none link-dark">Sous-titre</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="mainContent p-3 mb-5">
+                <div class="text-bg-light p-3 mb-4 col-sm-12 col-md-10 float-md-end">
+                    <div class="fs-3 fw-bold text-center rounded-2 bg-secondary bg-opacity-25 py-2">Installation & Configuration</div>
+                    <div class="">
+                        <h3 id="preRequis" class="fw-bolder mt-4">Pré-requis</h3>
+                        <p>Pour pouvoir commencer ce tutoriel, il vous faut quelques pré-requis :</p>
+                        <div>
+                            <ul>
+                                <li>
+                                    <p class="fw-bold">Installation de Visual Studio Code</p>
+                                </li>
+                            </ul>
+                            <p>Visual Studio Code est un éditeur de code source qui peut être utilisé avec une variété de
+                                langages de programmation, notamment Java, JavaScript, Go, Node.js et C++. Il est basé sur le
+                                cadre Electron, qui est utilisé pour développer des applications Web Node.js qui s'exécutent sur
+                                le moteur de présentation Blink.</p>
+                            <p>Vous le trouverez en cliquant sur ce lien : <a href="https://code.visualstudio.com/"
+                                    target="_blank">https://code.visualstudio.com/</a></p>
+                            <img class="w-100 pe-3 py-3" src="img/Capture_VisualStudioCode.png"
+                                alt="Capture d'écran du site Visual Studio Code">
+                            <li>
+                                <p class="fw-bold">Extentions et paramètrage de VSCode</p>
+                                <p>Dans Visual Studio Code, rendez-vous dans la page des extensions, ou en tapant directement
+                                    <span class="fst-italic">Ctrl+Maj+X</span>.
+                                </p>
+                                <p>Dans la barre de recherche entrez les extentions suivantes et installez-les et activez-les un
+                                    par un :</p>
+                                <p>
+                                <ul>
+                                    <li>PHP DocBlocker</li>
+                                    <li>Twig Language 2</li>
+                                    <li>PHP Namespace Resolver</li>
+                                    <li>Git Graph</li>
+                                </ul>
+                                </p>
+                            </li>
+                            <p><span class="fw-bolder">Twig</span> est un moteur de templates pour le langage de programmation
+                                PHP, utilisé par défaut par le framework Symfony.
+                                Il a été inspiré par Jinja, moteur de template Python.</p>
+                            <img class="w-100 pe-3 py-3" src="img/Capture_Twig_Language_2.png"
+                                alt="Capture d'écran de l'extension Twig Language 2">
+                            <p class="pt-2">Il faut préciser à VSCode de considérer l’extension <span
+                                    class="fw-bolder">.twig</span> comme l’extension <span class="fw-bolder">.html</span> : </p>
+                            <ul class="pb-2">
+                                <li>Allez dans Fichier > Préférences > Paramètres, ou tapez <span
+                                        class="fw-bolder">Ctrl+,</span></li>
+                                <li>Tapez dans la barre de recherche "emmet" puis dans l'onglet "emmet include langage", ajouter
+                                    la clé twig = html</li>
+                            </ul>
+                            <img class="w-100 pe-3 py-3" src="img/change_language_parameter_twig.png"
+                                alt="Capture d'écran de changement de langage Twig Language 2">
+                            <li class="py-4">
+                                <p class="fw-bold">Installation de PHP</p>
+                                <p><span class="fw-bolder">PHP</span> est un langage de script utilisé le plus souvent côté
+                                    serveur. Dans cette architecture, le serveur interprète le code PHP des pages web demandées
+                                    et génère du code (HTML, XHTML, CSS par exemple) et des données (JPEG, GIF, PNG par exemple)
+                                    pouvant être interprétés et rendus par un navigateur web. PHP peut également générer
+                                    d'autres formats comme le WML, le SVG et le PDF. </p>
+                                <p>Vous le trouverez en cliquant sur ce lien : <a href="https://www.php.net/"
+                                        target="_blank">https://www.php.net/</a></p>
+                            </li>
+                            <img class="w-100 pe-3 py-3" src="img/Capture_PHP.png" alt="Capture d'écran du site PHP">
+                            <li class="py-4">
+                                <p class="fw-bold">Installation de Composer</p>
+                                <p>C'est un gestionnaire de dépendances insdipensable à l'utilisation du framework Symfony.</p>
+                                <p>Vous le trouverez en cliquant sur ce lien : <a href="https://getcomposer.org/"
+                                        target="_blank">https://getcomposer.org/</a></p>
+                                <p>Téléchargez et exécutez <span class="fw-bolder">Composer-Setup.exe</span>. Il installera la
+                                    dernière version de Composer et configurera votre PATH de Windows afin que vous puissiez
+                                    appeler <span class="fw-bolder">Composer</span> depuis n'importe quel répertoire de votre
+                                    ligne de commande.</p>
+                            </li>
+                            <img class="w-100 pe-3 py-3" src="img/Capture_Composer.png" alt="Capture d'écran du site Composer">
+                        </div>
+                        <hr class="pb-4">
+                        <h3 id="installationSymfony" class="fw-bolder mt-4">Installation de Symfony 6</h3>
+                        <div>
+                            <ul>
+                                <li>
+                                    <p class="fw-bold">Installation de Symfony CLI</p>
+                                </li>
+                            </ul>
+                            <p>Tout d'abord verifiez les versions installées de PHP et de Composer</p>
+                            <p>Entrez la ligne suivante dans un terminal comme cmd.exe de Windows ou dans le terminal de Visual
+                                Studio Code :</p>
+                            <ul>
+                                <li><span class="text-info bg-dark px-2 pb-1">php -v</span></li>
+                            </ul>
+                            <img class="w-100 pe-3 py-3 my-2" src="img/Capture_Version_PHP.png"
+                                alt="Capture d'écran version de PHP">
+                            <p>Pour installer Symfony 6, il faut la version 8.0.2 de PHP ou superieur.<br>
+                                Si la commande php n’est pas reconnue, il faut vérifier le PATH dans les variables
+                                d’environnement et modifier ou ajouter le chemin vers le dossier de l’exécutable souhaité.</p>
+                            <p>Voici un lien qui vous explique comment modifier les variables d'environnement sur Windows : <a
+                                    href="https://learn.microsoft.com/fr-fr/iis/application-frameworks/install-and-configure-php-on-iis/install-and-configure-php"
+                                    target="_blank">https://learn.microsoft.com/fr-fr/iis/application-frameworks/install-and-configure-php-on-iis/install-and-configure-php</a>
+                            </p>
+                            <p>Entrez la ligne suivante dans un terminal comme cmd.exe de Windows ou dans le terminal de Visual
+                                Studio Code :</p>
+                            <ul>
+                                <li><span class="text-info bg-dark px-2 pb-1">composer -v</span></li>
+                            </ul>
+                            <img class="w-100 pe-3 py-3 my-2" src="img/Capture_Version_Composer.png"
+                                alt="Capture d'écran version de Composer">
+                            <p>Si le retour de ligne vous renvoie un numero de version comme l'image ci-dessus, alors
+                                l'installation de Composer s'est bien passée.</p>
+                            <p>Ensuite vous devez installer <span class="fw-bolder">Scoop</span>, voici le lien du site : <a
+                                    href="https://scoop.sh/" target="_blank">https://scoop.sh/</a></p>
+                            <p>Entrez les deux lignes successivement dans un terminal comme cmd.exe de Windows ou dans le
+                                terminal de Visual Studio Code :</p>
+                            <ul>
+                                <li><span class="text-info bg-dark px-2 pb-1">Set-ExecutionPolicy RemoteSigned -Scope
+                                        CurrentUser # Optional: Needed to run a remote script the first time</span></li>
+                                <li><span class="text-info bg-dark px-2 pb-1">irm get.scoop.sh | iex</span></li>
+                            </ul>
+                            <img class="w-100 pe-3 py-3 my-2" src="img/Capture_Scoop.png" alt="Capture d'écran du site Scoop">
+                            <p>La CLI Symfony est un outil de développement pour vous aider à créer, exécuter et gérer vos
+                                applications Symfony directement depuis votre terminal. C'est une Open-Source, qui
+                                fonctionne sur macOS, Windows et Linux, et vous ne devez l'installer qu'une seule fois sur
+                                votre système.</p>
+                            <p>Entrez la ligne suivante dans un terminal comme cmd.exe de Windows ou dans le terminal de
+                                Visual Studio Code :</p>
+                            <ul class="mb-2">
+                                <li><span class="text-info bg-dark px-2 pb-1">scoop install symfony-cli</span></li>
+                            </ul>
+                            <p>Vous le trouverez en cliquant sur ce lien : <a href="https://symfony.com/"
+                                    target="_blank">https://symfony.com/</a> dans l'onglet Download.</p>
+                            <img class="w-100 pe-3 py-3 my-2" src="img/Capture_Symfony_CLI.png"
+                                alt="Capture d'écran du site Symfony">
+                            <p>Verifiez la version installée de Symfony CLI</p>
+                            <p>Entrez la ligne suivante dans un terminal comme cmd.exe de Windows ou dans le terminal de Visual
+                                Studio Code :</p>
+                            <ul>
+                                <li><span class="text-info bg-dark px-2 pb-1">symfony -v</span></li>
+                            </ul>
+                            <img class="w-100 pe-3 py-3 my-2" src="img/Capture_Version_Symfony_CLI.png"
+                                alt="Capture d'écran version de Symfony CLI">
+                            <p>Voilà tout est prêt, vous pouvez commencer votre projet, en l'occurence créer un site Web.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-bg-light p-3 mb-4 col-sm-12 col-md-10 float-md-end">
+                    <div class="fs-3 fw-bold text-center rounded-2 bg-secondary bg-opacity-25 py-2">Création d'un projet Web</div>
+                    <div class="">
+                        <h3 id="projetWeb" class="fw-bolder mt-4">Création d'un nom de projet</h3>
+                        <p>Vous allez devoir créer un projet avec Symfony sur Visual studio Code.</p>
+                        <p>Pour cela il y a 4 manières possibles de faire.<br> Tapez ces commandes dans le terminal de VSCode :</p>
+                        <ul>
+                            <li><span class="text-info bg-dark px-2 pb-1">symfony new nom_du_projet</span></li>
+                            <li><span class="text-info bg-dark px-2 pb-1">composer create-project symfony/skeleton nom_du_projet</span></li>
+                            <p>Ces commandes créent un dossier avec le nom "nom_du_projet", et récupèrent plusieurs outils dont l'outil <span class="fw-bolder">composer.json</span>.<br>
+                            Cet outil va installer les composants de bases nécessaires et minimalistes pour la création d'un site web. </p>
+                            <li><span class="text-info bg-dark px-2 pb-1">symfony new --full nom_du_projet</span></li>
+                            <li><span class="text-info bg-dark px-2 pb-1">composer create-project symfony/website-skeleton nom_du_projet</span></li>
+                        </ul>
+                        <p>Les deux dernières commandes créent les mêmes composants que les premières, mais rajoutent d'autres dossiers en plus pour votre projet web.<br>
+                        Neanmoins il est préférable d'utiliser les commandes "composer" pour la création de son projet.</p>
+                        <p>Pour verifier la version "Symfony" installée, il suffit de taper la commande <span class="text-info bg-dark px-2 pb-1">symfony console about</span>.</p>
+                        <img class="w-100 pe-3 py-3 my-2" src="img/Capture_Version_Symfony.png"
+                                alt="Capture d'écran version de Symfony et PHP">
+                        <p>Nous voyons la version de Symfony : V.6.1.12 et la version de PHP : V.8.2.6</p>
+                        <p>Vous pouvez aussi installer Symfony avec différentes versions pour cela, il faudra taper ces commandes :
+                            <ul>
+                                <li><span class="text-info bg-dark px-2 pb-1">symfony new --webapp nom_du_projet --version=lts</span> pour la version lts.</li>
+                                <li><span class="text-info bg-dark px-2 pb-1">composer create-project symfony/skeleton nom_du_projet 5.4.*</span> pour la version 5.4.*.</li>
+                            </ul>
+                        </p>
+                        <hr class="pb-4">
+                        <h3 id="verifProject" class="fw-bolder mt-4">Vérification du projet créé</h3>
+                        <p>Faites une vérification du projet créé avec la commande <span class="text-info bg-dark px-2 pb-1">symfony check:requirements</span></p>
+                        <p>Vous obtiendrez ces informations :</p>
+                        <img class="w-100 pe-3 py-3 my-2" src="img/Capture_check_requirements.png"
+                                alt="Capture d'écran de la commande symfony check:requirements">
+                        <p>Les W représentent des erreurs à rectifier si possible. Par exemple :</p>
+                        <ul>
+                            <li><span class="text-info bg-dark px-2 pb-1"> * intl extension should be available<br>
+                                > Install and enable the intl extension (used for validators).</span></li>
+                        </ul>
+                        <p>Pour cela ouvrir votre fichier "php.ini", qui se trouve dans le répertoire de PHP, avec un éditeur de texte, 
+                            ensuite recherchez en tapant directement "Ctrl+F" le terme "intl", 
+                            puis décommentez l'extension en supprimant le ";" ou rajoutez l'extension si vous ne le trouvez pas.</p>
+                        <img class="w-100 pe-3 py-3 my-2" src="img/Capture_chgt_extension.png"
+                        alt="Capture d'écran pour décommenter l'extension intl">
+                        <p>Lorsque tout est OK et qu'il n'y a plus de messages d"erreurs, alors pour symfony tout est opérationnel et vous aurez cette fenêtre :</p>
+                        <img class="w-100 pe-3 py-3 my-2" src="img/Capture_tout_ok.png"
+                        alt="Capture d'écran pour le check:requirements OK">
+                        <hr class="pb-4">
+                        <h3 id="architectureProjet" class="fw-bolder mt-4">Architecture du projet</h3>
+                        <p>Voici l'architecture que vous devez avoir après toutes les installations, configurations et vérifications.</p>
+                        <ul>
+                            <li><span class="fw-bolder">bin</span> : ce dossier contient les exécutables de Symfony, comme le fichier console.</li>
+                            <li><span class="fw-bolder">config</span> : bon, là le nom du dossier parle de lui-même. Il contient tous les fichiers de configuration de Symfony ainsi que les dépendances que vous installerez plus tard.</li>
+                            <li><span class="fw-bolder">public</span> : c'est le point d'entrée de votre site Web, mais c'est aussi ici que vous stockerez tous vos "<em>assets</em>" (images, css, javascript...).</li>
+                            <li><span class="fw-bolder">migrations</span> : là se retrouvent des fichiers permettant de créer ou de mettre à jour la base de données.</li>
+                            <li><span class="fw-bolder">src</span> : c'est ici que toute votre logique métier sera traité ! Il contient notamment les controllers, les entités, les formulaires...</li>
+                            <li><span class="fw-bolder">templates</span> : vous pourrez exprimer votre talent de designer dans ce dossier. Toutes les vues sont concentrées ici.</li>
+                            <li><span class="fw-bolder">tests</span> : tous vos tests unitaires et fonctionnels seront regroupés dans ce dossier.</li>
+                            <li><span class="fw-bolder">var</span> : Symfony se chargera d'y stocker le cache et les logs de l'application.</li>
+                            <li><span class="fw-bolder">vendor</span> : ce dossier contient toutes les dépendances installées avec Composer.</li>
+                            <li><span class="fw-bolder">.env</span> : ce fichier regroupe les différentes variables d'environnements de l'application.</li>
+                        </ul>
+                        <img class="w-100 pe-3 py-3 my-2" src="img/Capture_Architecture_Projet.png"
+                        alt="Capture d'écran montrant l'architecture du projet">
+                        <hr class="pb-4">
+                        <h3 id="dossierEnv" class="fw-bolder mt-4">Configuration du dossier d'environnement</h3>
+                        <p>Nous allons configurer maintenant l'environnement de notre projet</p>
+                        <p>Copiez le dossier <span class="fw-bolder">.env</span> et renommez le <span class="fw-bolder">.env.locale</span>.</p>
+                        <p>Comme nous sommes en développement, la ligne <span class="text-info bg-dark px-2 pb-1">APP_ENV=dev</span> reste en dev, 
+                        mais dès lors que l'on sera en production on changera cette ligne en <span class="text-info bg-dark px-2 pb-1">APP_ENV=prod</span>.</p>
+                        <img class="w-100 pe-3 py-3 my-2" src="img/Capture_app_env.png"
+                        alt="Capture d'écran pour le APP_ENV=dev">
+                        <p>La ligne APP_SECRET= * , servira au jeton CSRF Pour la validation des formulaires, à modifier lors du passage en production.</p>
+                        <p>Pour la configuration de la base de données :</p>
+                        <ul>
+                            <li>Commentez la ligne "postgresql" avec un #</li>
+                            <li>Décommentez la ligne "mysql" en retirant le #</li>
+                            <li>Changez les paramètres de connexion avec votre nom d'utilisateur et votre mot de passe de connexion à mySQL</li>
+                            <li>Changez le nom de votre base de données par celui que vous aurez choisi</li>
+                            <li>Changez le numéro de la version de mySQL</li>
+                            <img class="w-100 pe-3 py-3 my-2" src="img/Capture_database_mysql.png"
+                        alt="Capture d'écran pour le changement de configuration de la base de données">
+                        </ul>
+                        <hr class="pb-4">
+                        <h3 id="demarrageServeur" class="fw-bolder mt-4">Démarrage du serveur</h3>
+                        <p>Vous avez la possibilité de démarrer un serveur avec Symfony afin de tester votre projet :</p>
+                        <p><span class="text-info bg-dark px-2 pb-1">
+                        symfony serve
+                        symfony server:log</span></p>
+                        <p>Il est tout à fait possible de faire la même chose avec une autre commande, mais Symfony ne la recommande plus. D'ailleurs, ils ont retiré la dépendance nécessaire à son fonctionnement. Faites l'essai en lançant cette commande :</p>
+                        <p><span class="text-info bg-dark px-2 pb-1">php bin/console server:start</span></p>
+                        <p>En cas d'erreur, installez via composer le serveur :</p>
+                        <p><span class="text-info bg-dark px-2 pb-1">composer req server</span></p>
+                        <p>Il ne vous reste qu'à ouvrir votre navigateur et à entrer l'adresse qu'affiche votre terminal, qui est normalement : <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>.</p>
+                        <p>Attention, le serveur Web tourne directement via le terminal, donc si vous fermez le terminal, vous coupez le serveur !</p>
+                        <h3 class="">Et voilà, votre projet est prêt à être travaillé ! ?</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <button id="boutonToTheTop">
+        <i class="bi bi-chevron-up"></i>
+    </button>
+    <footer class="position-absolute bg-dark bg-opacity-25 text-dark w-100 text-center mt-5 py-4">
+        <div class="">
+            <!--
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-google-plus"></i>
+            <i class="fa fa-linkedin"></i>
+            <i class="fa fa-instagram"></i>
+            -->
+        </div>
+        <div class="text-center">Tutoriel - Création d'un site e-commerce - Symfony 6 created by Sabri AMMARI &copy;
+            2023</div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>
