@@ -1,0 +1,249 @@
+/* Start general style */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: all 0.5s ease-in-out;
+}
+
+body {
+    width: 100vw !important;
+}
+
+.footerBar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-top: 15px;
+}
+/* End general style */
+
+
+/* Start logo style */
+#logoSA {
+    width: 100px !important;
+}
+
+#logoSA:hover {
+    transform: rotate(1turn) ;
+}
+/* End logo style */
+
+
+/* Start link nav style */
+#navbarSupportedContent {
+    padding-right: 116px !important;
+}
+
+.accueil, .tutoriel, .contact {
+    position: relative;
+    margin-right: 1rem;
+    color: rgb(0, 0, 0) !important;
+    text-shadow: 7px 7px 7px rgb(0, 0, 0);
+}
+
+.accueil:hover, .tutoriel:hover, .contact:hover {
+    text-shadow: -7px -7px 7px rgb(255, 255, 255);
+    color: rgb(255, 255, 255) !important;
+}
+
+.accueilActive, .tutorielActive, .contactActive {
+    text-shadow: 0px 0px 0px rgb(255, 255, 255);
+    color: rgb(255, 255, 255) !important;
+}
+
+.accueil:active, .tutoriel:active, .contact:active {
+    scale: 1.3;
+}
+/* End link nav style */
+
+
+/* Start Bouton back to top */
+#boutonToTheTop {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    z-index: 1;
+    width: 80px;
+    height: 80px;
+    font-size: 50px;
+    border: none;
+    outline: none;
+    background-color: #bdbdbd;
+    fill: #000000;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+#boutonToTheTop:hover {
+    background-color: rgb(78, 78, 78) !important;
+    color: white !important;
+    fill: white;
+}
+
+.bi-chevron-up {
+    width: 60px !important;
+    height: 60px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* End Bouton back to top */
+
+
+/* Start sideBar style */
+.bi {
+    cursor: pointer !important;
+}
+
+aside {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow: auto;
+    background: #f8f9fa;
+    border-radius: 0.5rem;
+    border-style: solid;
+    border-width: 0.1em;
+    border-color: #b4b2b2;
+}
+/* End sidebar style */
+
+
+/* Start contact form style */
+.contact-form-wrapper {
+    padding: 100px 0;
+}
+
+.contact-form {
+    padding: 30px 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    max-width: 400px;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form .form-input,
+.form-text-area {
+    background-color: #f0f4f5;
+    height: 50px;
+    padding-left: 16px;
+}
+
+.contact-form .form-text-area {
+    background-color: #f0f4f5;
+    height: auto;
+    padding-left: 16px;
+}
+
+.contact-form .form-control::placeholder {
+    color: #6f6f6f;
+    font-weight: 500;
+    opacity: 1;
+}
+
+.contact-form .form-control:-ms-input-placeholder {
+    color: #6f6f6f;
+    font-weight: 500;
+}
+
+.contact-form .form-control::-ms-input-placeholder {
+    color: #6f6f6f;
+    font-weight: 500;
+}
+
+.contact-form .form-control:focus {
+    border-color: #000000;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.07), 0 0 8px #000000;
+}
+
+.contact-form .title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.contact-form .description {
+    color: #6f6f6f;
+    font-size: 14px;
+    text-align: center;
+}
+
+.contact-form .submit-button-wrapper {
+    text-align: center;
+}
+
+.contact-form .submit-button-wrapper input {
+    border: none;
+    border-radius: 4px;
+    background-color: #000000;
+    color: white;
+    text-transform: uppercase;
+    padding: 10px 60px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.contact-form .submit-button-wrapper input:hover {
+    background-color: #000000;
+}
+/* End contact form style */
+
+
+/* Start style Page404 */
+#imgPage404 {
+    background-image: url('../img/homer-simpson-lecture.gif');
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.blur {
+    backdrop-filter: blur(20px);
+    width: 40%;
+    position: relative;
+    left: 50px;
+}
+/* Start style Page404 */
+
+
+/* Start Media queries style */
+@media (max-width: 768px) {
+    header > nav > input {
+        width: 50% !important;
+    }
+    .accueil, .tutoriel, .contact {
+        margin-right: 0.3rem !important;
+    }
+    #navbarSupportedContent {
+        padding-right: 0px;
+    }
+    #boutonToTheTop {
+        right: 10px;
+        width: 40px;
+        height: 40px;
+    }
+    #boutonToTheTop > .bi-chevron-up {
+        width: 20px !important;
+        height: 20px !important;
+        font-size: x-large;
+    }
+    aside {
+        background: none;
+        position: sticky;
+        top: 0;
+        border-style: none;
+    }
+    .navTableMatieres {
+        background-color: #212529;
+        border-radius: 0.5rem;
+        margin: auto;
+        width: 80%;
+    }
+}
+/* End Media queries style */
